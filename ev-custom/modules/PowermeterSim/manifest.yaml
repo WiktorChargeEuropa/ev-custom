@@ -1,0 +1,10 @@
+description: Powermeter simulator
+provides:
+  main:
+    description: Implementation of the sim functionality
+    interface: powermeter
+enable_external_mqtt: true
+metadata:
+  license: https://opensource.org/licenses/Apache-2.0
+  authors:
+    - ChargeEuropa

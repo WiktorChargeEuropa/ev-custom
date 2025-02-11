@@ -1,0 +1,49 @@
+description: >-
+  Interface for power supplies used for DC charging.
+cmds:
+  setExportVoltageCurrent:
+    description: Set output target voltage limit. Must be within reported limits.
+    arguments:
+      voltage:
+        description: Output voltage in Volt
+        type: number
+      current:
+        description: Output current limit in Ampere
+        type: number
+  setImportVoltageCurrent:
+    description: >-
+      Set minimal import voltage and current limit.  Must be within reported
+      limits.
+    arguments:
+      voltage:
+        description: Current will be drawn if input is above this voltage (in Volt)
+        type: number
+      current:
+        description: Input current limit in Ampere
+        type: number
+  setMode:
+    description: Set operational mode
+    arguments:
+      mode:
+        description: Operation mode of power supply
+        type: string
+        $ref: /power_supply_DC#/Mode
+      phase:
+        description: >-
+          Charging phase for this mode change. This information should normally not be needed by the power supply,
+          as it should always just operate in CCCV mode. Some special setups however are handling CableCheck/PreCharge/Charge
+          a little bit different internally.
+        type: string
+        $ref: /power_supply_DC#/ChargingPhase
+vars:
+  voltage_current:
+    description: Voltage/Current at the input/output
+    type: object
+    $ref: /power_supply_DC#/VoltageCurrent
+  capabilities:
+    description: >-
+      Publish capabilities of this PSU.
+    type: object
+    $ref: /power_supply_DC#/Capabilities
+errors:
+  - reference: /errors/power_supply_DC
