@@ -7,7 +7,6 @@ project(charge-everest VERSION 0.1
     DESCRIPTION "ChargeEuropa DC charging system"
     LANGUAGES CXX C)
     
-set(everest-cmake_DIR "/home/wiktor/Desktop/EverestARM/EVerest_power_modules/ev-workspace/everest-cmake")
 find_package(everest-cmake REQUIRED)
 
 find_package(everest-cmake 0.1 REQUIRED
